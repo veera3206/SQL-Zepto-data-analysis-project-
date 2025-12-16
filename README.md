@@ -1,5 +1,6 @@
 # SQL-Zepto-data-analysis-project-
 📌 Project Overview
+
 The goal is to simulate how actual data analysts in the e-commerce or retail industries work behind the scenes to use SQL to:
 
 ✅ Set up a messy, real-world e-commerce inventory database
@@ -11,6 +12,7 @@ The goal is to simulate how actual data analysts in the e-commerce or retail ind
 ✅ Write business-driven SQL queries to derive insights around pricing, inventory, stock availability, revenue and more
 
 📁 Dataset Overview
+
 The dataset was sourced from Kaggle and was originally scraped from Zepto’s official product listings. It mimics what you’d typically encounter in a real-world e-commerce inventory system.
 
 Each row represents a unique SKU (Stock Keeping Unit) for a product. Duplicate product names exist because the same product may appear multiple times in different package sizes, weights, discounts, or categories to improve visibility – exactly how real catalog data looks.
@@ -55,6 +57,7 @@ CREATE TABLE zepto (
   outOfStock BOOLEAN,
   quantity INTEGER
 );
+
 2. Data Import
 Loaded CSV using pgAdmin's import feature.
 
@@ -64,6 +67,7 @@ If you're not able to use the import feature, write this code instead:
             discountedSellingPrice,weightInGms,outOfStock,quantity)
   FROM 'data/zepto_v2.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"', ENCODING 'UTF8');
 Faced encoding issues (UTF-8 error), which were fixed by saving the CSV file using CSV UTF-8 format.
+
 3. 🔍 Data Exploration
 Counted the total number of records in the dataset
 
